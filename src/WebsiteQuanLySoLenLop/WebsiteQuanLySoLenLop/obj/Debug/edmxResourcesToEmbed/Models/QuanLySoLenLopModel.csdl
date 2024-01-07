@@ -1,0 +1,194 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="QuanLySoLenLopModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Admin">
+    <Key>
+      <PropertyRef Name="Username" />
+    </Key>
+    <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BoMon">
+    <Key>
+      <PropertyRef Name="MaBoMon" />
+    </Key>
+    <Property Name="MaBoMon" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TenBoMon" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="GiangViens" Relationship="Self.FK__GiangVien__MaBoM__3E52440B" FromRole="BoMon" ToRole="GiangVien" />
+  </EntityType>
+  <EntityType Name="GiangVien">
+    <Key>
+      <PropertyRef Name="MaGVGD" />
+    </Key>
+    <Property Name="MaGVGD" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="HoTenGVGD" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Matkhau" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MaKhoa" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MaBoMon" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="BoMon" Relationship="Self.FK__GiangVien__MaBoM__3E52440B" FromRole="GiangVien" ToRole="BoMon" />
+    <NavigationProperty Name="Khoa" Relationship="Self.FK__GiangVien__MaKho__3D5E1FD2" FromRole="GiangVien" ToRole="Khoa" />
+    <NavigationProperty Name="SoLenLops" Relationship="Self.FK__SoLenLop__MaGVGD__46E78A0C" FromRole="GiangVien" ToRole="SoLenLop" />
+  </EntityType>
+  <EntityType Name="Khoa">
+    <Key>
+      <PropertyRef Name="MaKhoa" />
+    </Key>
+    <Property Name="MaKhoa" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TenKhoa" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="GiangViens" Relationship="Self.FK__GiangVien__MaKho__3D5E1FD2" FromRole="Khoa" ToRole="GiangVien" />
+  </EntityType>
+  <EntityType Name="Lop">
+    <Key>
+      <PropertyRef Name="MaLop" />
+    </Key>
+    <Property Name="MaLop" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TenLop" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="SoLenLops" Relationship="Self.FK__SoLenLop__MaLop__49C3F6B7" FromRole="Lop" ToRole="SoLenLop" />
+  </EntityType>
+  <EntityType Name="MonHoc">
+    <Key>
+      <PropertyRef Name="MaMH" />
+    </Key>
+    <Property Name="MaMH" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TenMH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SoTietLT" Type="Int32" Nullable="false" />
+    <Property Name="SoTietTH" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="SoLenLops" Relationship="Self.FK__SoLenLop__MaMH__47DBAE45" FromRole="MonHoc" ToRole="SoLenLop" />
+  </EntityType>
+  <EntityType Name="Phong">
+    <Key>
+      <PropertyRef Name="MaPhong" />
+    </Key>
+    <Property Name="MaPhong" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TenPhong" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="SoLenLops" Relationship="Self.FK__SoLenLop__MaPhon__48CFD27E" FromRole="Phong" ToRole="SoLenLop" />
+  </EntityType>
+  <EntityType Name="SoLenLop">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="HocKy" Type="Int32" Nullable="false" />
+    <Property Name="NamHoc" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Nhom" Type="Int32" Nullable="false" />
+    <Property Name="NgayLenLop" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Buoi" Type="Int32" Nullable="false" />
+    <Property Name="SoTietDayLT" Type="Int32" Nullable="false" />
+    <Property Name="SoTietDayTH" Type="Int32" Nullable="false" />
+    <Property Name="SinhVienVang" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Tomtatnoidung" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="MaMH" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MaLop" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MaPhong" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MaGVGD" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="GiangVien" Relationship="Self.FK__SoLenLop__MaGVGD__46E78A0C" FromRole="SoLenLop" ToRole="GiangVien" />
+    <NavigationProperty Name="Lop" Relationship="Self.FK__SoLenLop__MaLop__49C3F6B7" FromRole="SoLenLop" ToRole="Lop" />
+    <NavigationProperty Name="MonHoc" Relationship="Self.FK__SoLenLop__MaMH__47DBAE45" FromRole="SoLenLop" ToRole="MonHoc" />
+    <NavigationProperty Name="Phong" Relationship="Self.FK__SoLenLop__MaPhon__48CFD27E" FromRole="SoLenLop" ToRole="Phong" />
+  </EntityType>
+  <Association Name="FK__GiangVien__MaBoM__3E52440B">
+    <End Role="BoMon" Type="Self.BoMon" Multiplicity="1" />
+    <End Role="GiangVien" Type="Self.GiangVien" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BoMon">
+        <PropertyRef Name="MaBoMon" />
+      </Principal>
+      <Dependent Role="GiangVien">
+        <PropertyRef Name="MaBoMon" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__GiangVien__MaKho__3D5E1FD2">
+    <End Role="Khoa" Type="Self.Khoa" Multiplicity="1" />
+    <End Role="GiangVien" Type="Self.GiangVien" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Khoa">
+        <PropertyRef Name="MaKhoa" />
+      </Principal>
+      <Dependent Role="GiangVien">
+        <PropertyRef Name="MaKhoa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SoLenLop__MaGVGD__46E78A0C">
+    <End Role="GiangVien" Type="Self.GiangVien" Multiplicity="1" />
+    <End Role="SoLenLop" Type="Self.SoLenLop" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GiangVien">
+        <PropertyRef Name="MaGVGD" />
+      </Principal>
+      <Dependent Role="SoLenLop">
+        <PropertyRef Name="MaGVGD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SoLenLop__MaLop__49C3F6B7">
+    <End Role="Lop" Type="Self.Lop" Multiplicity="1" />
+    <End Role="SoLenLop" Type="Self.SoLenLop" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Lop">
+        <PropertyRef Name="MaLop" />
+      </Principal>
+      <Dependent Role="SoLenLop">
+        <PropertyRef Name="MaLop" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SoLenLop__MaMH__47DBAE45">
+    <End Role="MonHoc" Type="Self.MonHoc" Multiplicity="1" />
+    <End Role="SoLenLop" Type="Self.SoLenLop" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MonHoc">
+        <PropertyRef Name="MaMH" />
+      </Principal>
+      <Dependent Role="SoLenLop">
+        <PropertyRef Name="MaMH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SoLenLop__MaPhon__48CFD27E">
+    <End Role="Phong" Type="Self.Phong" Multiplicity="1" />
+    <End Role="SoLenLop" Type="Self.SoLenLop" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Phong">
+        <PropertyRef Name="MaPhong" />
+      </Principal>
+      <Dependent Role="SoLenLop">
+        <PropertyRef Name="MaPhong" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="QuanLySoLenLopEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Admins" EntityType="Self.Admin" />
+    <EntitySet Name="BoMons" EntityType="Self.BoMon" />
+    <EntitySet Name="GiangViens" EntityType="Self.GiangVien" />
+    <EntitySet Name="Khoas" EntityType="Self.Khoa" />
+    <EntitySet Name="Lops" EntityType="Self.Lop" />
+    <EntitySet Name="MonHocs" EntityType="Self.MonHoc" />
+    <EntitySet Name="Phongs" EntityType="Self.Phong" />
+    <EntitySet Name="SoLenLops" EntityType="Self.SoLenLop" />
+    <AssociationSet Name="FK__GiangVien__MaBoM__3E52440B" Association="Self.FK__GiangVien__MaBoM__3E52440B">
+      <End Role="BoMon" EntitySet="BoMons" />
+      <End Role="GiangVien" EntitySet="GiangViens" />
+    </AssociationSet>
+    <AssociationSet Name="FK__GiangVien__MaKho__3D5E1FD2" Association="Self.FK__GiangVien__MaKho__3D5E1FD2">
+      <End Role="Khoa" EntitySet="Khoas" />
+      <End Role="GiangVien" EntitySet="GiangViens" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SoLenLop__MaGVGD__46E78A0C" Association="Self.FK__SoLenLop__MaGVGD__46E78A0C">
+      <End Role="GiangVien" EntitySet="GiangViens" />
+      <End Role="SoLenLop" EntitySet="SoLenLops" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SoLenLop__MaLop__49C3F6B7" Association="Self.FK__SoLenLop__MaLop__49C3F6B7">
+      <End Role="Lop" EntitySet="Lops" />
+      <End Role="SoLenLop" EntitySet="SoLenLops" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SoLenLop__MaMH__47DBAE45" Association="Self.FK__SoLenLop__MaMH__47DBAE45">
+      <End Role="MonHoc" EntitySet="MonHocs" />
+      <End Role="SoLenLop" EntitySet="SoLenLops" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SoLenLop__MaPhon__48CFD27E" Association="Self.FK__SoLenLop__MaPhon__48CFD27E">
+      <End Role="Phong" EntitySet="Phongs" />
+      <End Role="SoLenLop" EntitySet="SoLenLops" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

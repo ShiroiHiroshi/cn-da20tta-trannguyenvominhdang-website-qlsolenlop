@@ -1,0 +1,64 @@
+﻿@model IEnumerable<WebsiteQuanLySoLenLop.Models.GiangVien>
+@{
+    ViewBag.Title = "Index";
+}
+<h4>Danh sách tài khoản giảng viên</h4>
+<hr />
+@using (Html.BeginForm())
+{
+    <p>
+        Tên giảng viên: @Html.TextBox("SearchString")
+        <input type="submit" value="Tìm" class="btn btn-primary"/>
+    </p>
+}
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.MaGVGD)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HoTenGVGD)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MaKhoa)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Khoa.TenKhoa)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MaBoMon)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BoMon.TenBoMon)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaGVGD)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HoTenGVGD)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaKhoa)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Khoa.TenKhoa)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaBoMon)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BoMon.TenBoMon)
+            </td>
+            <td>
+                @Html.ActionLink("Detail", "GiangVienDetail", new { id = item.MaGVGD }) |
+                @Html.ActionLink("Delete", "GiangVienDelete", new { id = item.MaGVGD })
+            </td>
+        </tr>
+    }
+</table>

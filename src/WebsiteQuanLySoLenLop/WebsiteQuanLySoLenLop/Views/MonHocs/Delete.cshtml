@@ -1,0 +1,54 @@
+﻿@model WebsiteQuanLySoLenLop.Models.MonHoc
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+
+<div>
+    <h4>Xoá thông tin môn học</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.MaMH)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaMH)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TenMH)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenMH)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SoTietLT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SoTietLT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SoTietTH)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SoTietTH)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-danger" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

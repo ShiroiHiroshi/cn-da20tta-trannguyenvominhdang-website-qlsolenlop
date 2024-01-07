@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="1fa5e7d14ed34d3f841b25042f885a9f" Name="Diagram1">
+        <EntityTypeShape EntityType="QuanLySoLenLopModel.Admin" Width="1.5" PointX="5.75" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLySoLenLopModel.BoMon" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLySoLenLopModel.GiangVien" Width="1.5" PointX="3" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLySoLenLopModel.Khoa" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLySoLenLopModel.Lop" Width="1.5" PointX="3" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLySoLenLopModel.MonHoc" Width="1.5" PointX="3" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLySoLenLopModel.Phong" Width="1.5" PointX="3" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLySoLenLopModel.SoLenLop" Width="1.5" PointX="5.25" PointY="2.25" IsExpanded="true" />
+        <AssociationConnector Association="QuanLySoLenLopModel.FK__GiangVien__MaBoM__3E52440B" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLySoLenLopModel.FK__GiangVien__MaKho__3D5E1FD2" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLySoLenLopModel.FK__SoLenLop__MaGVGD__46E78A0C" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLySoLenLopModel.FK__SoLenLop__MaLop__49C3F6B7" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLySoLenLopModel.FK__SoLenLop__MaMH__47DBAE45" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLySoLenLopModel.FK__SoLenLop__MaPhon__48CFD27E" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

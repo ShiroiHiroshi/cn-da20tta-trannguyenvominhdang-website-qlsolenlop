@@ -1,0 +1,106 @@
+﻿@model WebsiteQuanLySoLenLop.Models.SoLenLop
+
+@{
+    ViewBag.Title = "SoLenLopCreate";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+            <h4>Tạo sổ lên lớp</h4>
+            <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <table>
+            <tr>
+                <td>@Html.LabelFor(model => model.HocKy)</td>
+                <td>
+                    @Html.DropDownListFor(model => model.HocKy, new List<SelectListItem>
+                    {
+                        new SelectListItem { Text = "1", Value = "1" },
+                        new SelectListItem { Text = "2", Value = "2" },
+                    }, "Chọn học kỳ", new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.HocKy, "", new { @class = "text-danger" })
+                </td>
+                <td>@Html.LabelFor(model => model.NamHoc)</td>
+                <td>
+                    @Html.DropDownListFor(model => model.NamHoc, new List<SelectListItem>
+                    {
+                        new SelectListItem { Text = "2022-2023", Value = "1" },
+                        new SelectListItem { Text = "2023-2024", Value = "2" },
+                    }, "Chọn năm học", new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.NamHoc, "", new { @class = "text-danger" })
+                </td>
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(model => model.Nhom)</td>
+                <td>
+                    @Html.DropDownListFor(model => model.Nhom, new List<SelectListItem>
+                    {
+                        new SelectListItem { Text = "1", Value = "1" },
+                        new SelectListItem { Text = "2", Value = "2" },
+                    }, "Chọn nhóm", new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Nhom, "", new { @class = "text-danger" })
+                </td>
+                <td>@Html.LabelFor(model => model.NgayLenLop)</td>
+                <td>
+                    @Html.EditorFor(model => model.NgayLenLop, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.NgayLenLop, "", new { @class = "text-danger" })
+                </td>
+                <td>@Html.LabelFor(model => model.Buoi)</td>
+                <td>
+                    @Html.EditorFor(model => model.Buoi, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Buoi, "", new { @class = "text-danger" })
+                </td>
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(model => model.SoTietDayLT)</td>
+                <td>
+                    @Html.DropDownListFor(model => model.SoTietDayLT, new SelectList(Enumerable.Range(0, 6)), new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.SoTietDayLT, "", new { @class = "text-danger" })
+                </td>
+                <td>@Html.LabelFor(model => model.SoTietDayTH)</td>
+                <td>
+                    @Html.DropDownListFor(model => model.SoTietDayTH, new SelectList(Enumerable.Range(0, 6)), new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.SoTietDayTH, "", new { @class = "text-danger" })
+                </td>
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(model => model.SinhVienVang)</td>
+                <td>
+                    @Html.TextAreaFor(model => model.SinhVienVang, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.SinhVienVang, "", new { @class = "text-danger" })
+                </td>
+                <td>@Html.LabelFor(model => model.Tomtatnoidung)</td>
+                <td>
+                    @Html.TextAreaFor(model => model.Tomtatnoidung, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Tomtatnoidung, "", new { @class = "text-danger" })
+                </td>
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(model => model.MaMH, "MaMH")</td>
+                <td>
+                    @Html.DropDownList("MaMH", null, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.MaMH, "", new { @class = "text-danger" })
+                </td>
+                <td>@Html.LabelFor(model => model.MaLop, "MaLop")</td>
+                <td>
+                    @Html.DropDownList("MaLop", null, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.MaLop, "", new { @class = "text-danger" })
+                </td>
+                <td>@Html.LabelFor(model => model.MaPhong, "MaPhong")</td>
+                <td>
+                    @Html.DropDownList("MaPhong", null, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.MaPhong, "", new { @class = "text-danger" })
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="submit" value="Create" class="btn btn-success"  /> |
+                    @Html.ActionLink("Back to List", "Index")
+                </td>
+            </tr>
+        </table>
+    </div>
+}

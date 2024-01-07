@@ -1,0 +1,103 @@
+﻿@model IEnumerable<WebsiteQuanLySoLenLop.Models.SoLenLop>
+
+@{
+    ViewBag.Title = "Index";
+}
+<h4>Danh sách sổ lên lớp</h4>
+<hr />
+@using (Html.BeginForm())
+{
+    <p>
+        Mã lớp: @Html.TextBox("SearchString")
+        <input type="submit" value="Tìm" class="btn btn-primary" />
+    </p>
+}
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.HocKy)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NamHoc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nhom)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NgayLenLop)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Buoi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SoTietDayLT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SoTietDayTH)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SinhVienVang)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tomtatnoidung)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Lop.MaLop)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MonHoc.TenMH)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Phong.MaPhong)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.HocKy)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NamHoc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nhom)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NgayLenLop)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Buoi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SoTietDayLT)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SoTietDayTH)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SinhVienVang)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tomtatnoidung)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Lop.MaLop)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MonHoc.TenMH)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Phong.MaPhong)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "SoLenLopUpdate", new { id = item.ID }) |
+                @Html.ActionLink("Details", "SoLenLopDetail", new { id = item.ID }) |
+                @Html.ActionLink("Delete", "SoLenLopDelete", new { id = item.ID })
+            </td>
+        </tr>
+    }
+
+</table>

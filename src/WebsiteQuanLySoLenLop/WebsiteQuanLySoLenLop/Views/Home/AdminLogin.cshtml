@@ -1,0 +1,57 @@
+﻿@model WebsiteQuanLySoLenLop.Models.Admin
+
+@{
+    ViewBag.Title = "AdminLogin";
+}
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 mx-auto">
+                <div class="card">
+                    <div class="card-body">
+                        <center>
+                            <img src="~/image/adminuser.png"width="150"/>
+                            <h2>Admin Login</h2>
+                            <hr />
+                        </center>
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.Username)
+                                    <div class="col-md-10">
+                                        @Html.TextBoxFor(model => model.Username)
+                                        @Html.ValidationMessageFor(model => model.Username)
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.Password)
+                                    <div class="col-md-10">
+                                        @Html.PasswordFor(model => model.Password)
+                                        @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="col-md-offset-2 col-md-10">
+                                        <input type="submit" value="Đăng nhập" class="btn btn-primary" />
+                                    </div>
+                                </div>
+                                <h3>@ViewBag.LoginFail</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}

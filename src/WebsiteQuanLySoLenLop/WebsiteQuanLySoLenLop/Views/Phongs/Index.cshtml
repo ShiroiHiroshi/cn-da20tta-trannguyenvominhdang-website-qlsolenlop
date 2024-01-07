@@ -1,0 +1,47 @@
+﻿@model IEnumerable<WebsiteQuanLySoLenLop.Models.Phong>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h4>Danh sách phòng</h4>
+<hr />
+@using (Html.BeginForm())
+{
+    <p>
+        Tên môn học: @Html.TextBox("SearchString")
+        <input type="submit" value="Tìm" class="btn btn-primary" />
+        <button type="button" class="btn btn-default">
+            @Html.ActionLink("Create", "Create")
+        </button>
+    </p>
+}
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.MaPhong)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TenPhong)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaPhong)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TenPhong)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.MaPhong }) |
+                @Html.ActionLink("Details", "Details", new { id = item.MaPhong }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.MaPhong })
+            </td>
+        </tr>
+    }
+
+</table>

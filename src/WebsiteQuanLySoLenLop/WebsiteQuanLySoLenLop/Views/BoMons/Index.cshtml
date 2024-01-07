@@ -1,0 +1,46 @@
+﻿@model IEnumerable<WebsiteQuanLySoLenLop.Models.BoMon>
+
+@{
+    ViewBag.Title = "Index";
+}
+<h4>Danh sách bộ môn</h4>
+<hr />
+@using (Html.BeginForm())
+{
+    <p>
+        Tên bộ môn: @Html.TextBox("SearchString")
+        <input type="submit" value="Tìm" class="btn btn-primary" />
+        <button type="button" class="btn btn-default">
+            @Html.ActionLink("Create", "Create")
+        </button>
+    </p>
+}
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.MaBoMon)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TenBoMon)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+            @Html.DisplayFor(modelItem => item.MaBoMon)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TenBoMon)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.MaBoMon }) |
+                @Html.ActionLink("Details", "Details", new { id = item.MaBoMon }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.MaBoMon })
+            </td>
+        </tr>
+    }
+
+</table>

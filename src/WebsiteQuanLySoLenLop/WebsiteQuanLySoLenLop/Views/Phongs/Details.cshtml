@@ -1,0 +1,33 @@
+﻿@model WebsiteQuanLySoLenLop.Models.Phong
+
+@{
+    ViewBag.Title = "Details";
+}
+
+
+
+<div>
+    <h4>Thông tin phòng</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.MaPhong)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaPhong)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TenPhong)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenPhong)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = "Model.MaPhong" }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

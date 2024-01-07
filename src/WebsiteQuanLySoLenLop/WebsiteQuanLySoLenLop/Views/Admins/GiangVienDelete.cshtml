@@ -1,0 +1,70 @@
+﻿@model WebsiteQuanLySoLenLop.Models.GiangVien
+
+@{
+    ViewBag.Title = "GiangVienDelete";
+}
+
+<div>
+    <h4>Xoá tài khoản giảng viên</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.MaGVGD)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaGVGD)
+         </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.HoTenGVGD)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HoTenGVGD)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MaKhoa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaKhoa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Khoa.TenKhoa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Khoa.TenKhoa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MaBoMon)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaBoMon)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoMon.TenBoMon)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoMon.TenBoMon)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-danger" />
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
+

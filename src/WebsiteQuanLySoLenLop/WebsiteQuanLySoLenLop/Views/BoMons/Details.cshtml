@@ -1,0 +1,32 @@
+﻿@model WebsiteQuanLySoLenLop.Models.BoMon
+
+@{
+    ViewBag.Title = "Details";
+}
+
+
+<div>
+    <h4>Thông tin bộ môn</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.MaBoMon)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaBoMon)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TenBoMon)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenBoMon)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MaBoMon }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

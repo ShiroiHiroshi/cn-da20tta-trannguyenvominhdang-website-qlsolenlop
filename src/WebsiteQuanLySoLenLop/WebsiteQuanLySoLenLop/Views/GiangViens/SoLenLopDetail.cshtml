@@ -1,0 +1,108 @@
+﻿@model WebsiteQuanLySoLenLop.Models.SoLenLop
+
+@{
+    ViewBag.Title = "SoLenLopDetail";
+}
+
+<div>
+    <h4>Thông tin sổ lên lớp</h4>
+    <hr />
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.HocKy)
+            </th>
+            <td>
+                @Html.DisplayFor(model => model.HocKy)
+            </td>
+            <th>
+                @Html.DisplayNameFor(model => model.NamHoc)
+            </th>
+            <td>
+                @Html.DisplayFor(model => model.NamHoc)
+            </td>
+            <th>
+                @Html.DisplayNameFor(model => model.Nhom)
+            </th>
+            <td>
+                @Html.DisplayFor(model => model.Nhom)
+            </td>
+            <th>
+                @Html.DisplayNameFor(model => model.NgayLenLop)
+            </th>
+            <td>
+                @Html.DisplayFor(model => model.NgayLenLop)
+            </td>
+        </tr>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.MaMH)
+            </th>
+            <td>
+                @Html.DisplayFor(model => model.MaMH)
+            </td>
+            <th>
+                @Html.DisplayNameFor(model => model.Buoi)
+            </th>
+            <td>
+                @Html.DisplayFor(model => model.Buoi)
+            </td>
+            <th>
+                @Html.DisplayNameFor(model => model.SoTietDayLT)
+            </th>
+            <td>
+                @Html.DisplayFor(model => model.SoTietDayLT)
+            </td>
+            <th>
+                @Html.DisplayNameFor(model => model.SoTietDayTH)
+            </th>
+            <td>
+                @Html.DisplayFor(model => model.SoTietDayTH)
+            </td>
+        </tr>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.MonHoc.TenMH)
+            </th>
+            <td>
+                @Html.DisplayFor(model => model.MonHoc.TenMH)
+            </td>
+            <th>
+                @Html.DisplayNameFor(model => model.MaLop)
+            </th>
+            <td>
+                @Html.DisplayFor(model => model.MaLop)
+            </td>
+            <th>
+                @Html.DisplayNameFor(model => model.MaPhong)
+            </th>
+            <td>
+                @Html.DisplayFor(model => model.MaPhong)
+            </td>
+            <th>
+                @Html.DisplayNameFor(model => model.MaGVGD)
+            </th>
+            <td>
+                @Html.DisplayFor(model => model.MaGVGD)
+            </td>
+        </tr>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Tomtatnoidung)
+            </th>
+            <td colspan="3">
+                @Html.DisplayFor(model => model.Tomtatnoidung)
+            </td>
+            <th>
+                @Html.DisplayNameFor(model => model.SinhVienVang)
+            </th>
+            <td colspan="3">
+                @Html.DisplayFor(model => model.SinhVienVang)
+            </td>
+        </tr>
+    </table>
+</div>
+<p>
+    @Html.ActionLink("Edit", "SoLenLopUpdate", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

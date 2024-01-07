@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="QuanLySoLenLopModelStoreContainer" CdmEntityContainer="QuanLySoLenLopEntities">
+    <EntitySetMapping Name="Admins">
+      <EntityTypeMapping TypeName="QuanLySoLenLopModel.Admin">
+        <MappingFragment StoreEntitySet="Admin">
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BoMons">
+      <EntityTypeMapping TypeName="QuanLySoLenLopModel.BoMon">
+        <MappingFragment StoreEntitySet="BoMon">
+          <ScalarProperty Name="MaBoMon" ColumnName="MaBoMon" />
+          <ScalarProperty Name="TenBoMon" ColumnName="TenBoMon" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GiangViens">
+      <EntityTypeMapping TypeName="QuanLySoLenLopModel.GiangVien">
+        <MappingFragment StoreEntitySet="GiangVien">
+          <ScalarProperty Name="MaGVGD" ColumnName="MaGVGD" />
+          <ScalarProperty Name="HoTenGVGD" ColumnName="HoTenGVGD" />
+          <ScalarProperty Name="Matkhau" ColumnName="Matkhau" />
+          <ScalarProperty Name="MaKhoa" ColumnName="MaKhoa" />
+          <ScalarProperty Name="MaBoMon" ColumnName="MaBoMon" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Khoas">
+      <EntityTypeMapping TypeName="QuanLySoLenLopModel.Khoa">
+        <MappingFragment StoreEntitySet="Khoa">
+          <ScalarProperty Name="MaKhoa" ColumnName="MaKhoa" />
+          <ScalarProperty Name="TenKhoa" ColumnName="TenKhoa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Lops">
+      <EntityTypeMapping TypeName="QuanLySoLenLopModel.Lop">
+        <MappingFragment StoreEntitySet="Lop">
+          <ScalarProperty Name="MaLop" ColumnName="MaLop" />
+          <ScalarProperty Name="TenLop" ColumnName="TenLop" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MonHocs">
+      <EntityTypeMapping TypeName="QuanLySoLenLopModel.MonHoc">
+        <MappingFragment StoreEntitySet="MonHoc">
+          <ScalarProperty Name="MaMH" ColumnName="MaMH" />
+          <ScalarProperty Name="TenMH" ColumnName="TenMH" />
+          <ScalarProperty Name="SoTietLT" ColumnName="SoTietLT" />
+          <ScalarProperty Name="SoTietTH" ColumnName="SoTietTH" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Phongs">
+      <EntityTypeMapping TypeName="QuanLySoLenLopModel.Phong">
+        <MappingFragment StoreEntitySet="Phong">
+          <ScalarProperty Name="MaPhong" ColumnName="MaPhong" />
+          <ScalarProperty Name="TenPhong" ColumnName="TenPhong" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SoLenLops">
+      <EntityTypeMapping TypeName="QuanLySoLenLopModel.SoLenLop">
+        <MappingFragment StoreEntitySet="SoLenLop">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="HocKy" ColumnName="HocKy" />
+          <ScalarProperty Name="NamHoc" ColumnName="NamHoc" />
+          <ScalarProperty Name="Nhom" ColumnName="Nhom" />
+          <ScalarProperty Name="NgayLenLop" ColumnName="NgayLenLop" />
+          <ScalarProperty Name="Buoi" ColumnName="Buoi" />
+          <ScalarProperty Name="SoTietDayLT" ColumnName="SoTietDayLT" />
+          <ScalarProperty Name="SoTietDayTH" ColumnName="SoTietDayTH" />
+          <ScalarProperty Name="SinhVienVang" ColumnName="SinhVienVang" />
+          <ScalarProperty Name="Tomtatnoidung" ColumnName="Tomtatnoidung" />
+          <ScalarProperty Name="MaMH" ColumnName="MaMH" />
+          <ScalarProperty Name="MaLop" ColumnName="MaLop" />
+          <ScalarProperty Name="MaPhong" ColumnName="MaPhong" />
+          <ScalarProperty Name="MaGVGD" ColumnName="MaGVGD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

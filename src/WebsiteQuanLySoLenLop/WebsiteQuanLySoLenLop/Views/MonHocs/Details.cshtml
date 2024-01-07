@@ -1,0 +1,50 @@
+﻿@model WebsiteQuanLySoLenLop.Models.MonHoc
+
+@{
+    ViewBag.Title = "Details";
+}
+
+
+
+<div>
+    <h4>Thông tin môn học</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.MaMH)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaMH)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TenMH)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenMH)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SoTietLT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SoTietLT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SoTietTH)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SoTietTH)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MaMH }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
